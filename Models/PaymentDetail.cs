@@ -9,6 +9,7 @@ namespace PaymentAPI.Models
 {
     public class PaymentDetail
     {
+        // Naming Convention: C# -> Pascal Case, others -> Camel Case
         [Key]
         public int PaymentDetailId { get; set; }
         [Column(TypeName ="nvarchar(100)")]

@@ -11,23 +11,23 @@ namespace PaymentAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PaymentDetailsController : ControllerBase
+    public class PaymentDetailController : ControllerBase
     {
         private readonly PaymentDetailContext _context;
 
-        public PaymentDetailsController(PaymentDetailContext context)
+        public PaymentDetailController(PaymentDetailContext context)
         {
             _context = context;
         }
 
-        // GET: api/PaymentDetails
+        // GET: api/PaymentDetail
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PaymentDetail>>> GetPaymentDetails()
         {
             return await _context.PaymentDetails.ToListAsync();
         }
 
-        // GET: api/PaymentDetails/5
+        // GET: api/PaymentDetail/5
         [HttpGet("{id}")]
         public async Task<ActionResult<PaymentDetail>> GetPaymentDetail(int id)
         {
@@ -41,7 +41,7 @@ namespace PaymentAPI.Controllers
             return paymentDetail;
         }
 
-        // PUT: api/PaymentDetails/5
+        // PUT: api/PaymentDetail/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPaymentDetail(int id, PaymentDetail paymentDetail)
@@ -72,7 +72,7 @@ namespace PaymentAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/PaymentDetails
+        // POST: api/PaymentDetail
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<PaymentDetail>> PostPaymentDetail(PaymentDetail paymentDetail)
@@ -83,7 +83,7 @@ namespace PaymentAPI.Controllers
             return CreatedAtAction("GetPaymentDetail", new { id = paymentDetail.PaymentDetailId }, paymentDetail);
         }
 
-        // DELETE: api/PaymentDetails/5
+        // DELETE: api/PaymentDetail/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePaymentDetail(int id)
         {
