@@ -12,6 +12,7 @@ namespace PaymentAPI.Models
         {
 
         }
+        // PaymentDetails is the table name in MSFT SQL DB
         public DbSet<PaymentDetail> PaymentDetails { get; set; }
     }
 }
