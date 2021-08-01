@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { PaymentDetail } from 'src/app/shared/payment-detail.model';
 import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
 
 @Component({
@@ -15,10 +16,15 @@ export class PaymentDetailFormComponent implements OnInit {
     this.svc.postPaymentDetail().subscribe(
       (res) => {
         console.log(res);
+        this.resetForm(form);
       },
       (err) => {
         console.log(err);
       }
     );
+  }
+  resetForm(form: NgForm) {
+    form.form.reset();
+    this.svc.formData = new PaymentDetail();
   }
 }
