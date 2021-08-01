@@ -30,4 +30,7 @@ export class PaymentDetailService {
       this.formData
     );
   }
+  deletePaymentDetail(id: number) {
+    return this.hc.delete(`${this.baseURL}/${id}`);
+  }
 }

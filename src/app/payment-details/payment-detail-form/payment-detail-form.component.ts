@@ -47,7 +47,7 @@ export class PaymentDetailFormComponent implements OnInit {
         this.svc.refreshList();
         this.toastrSvc.info(
           'Data updated successfully',
-          'PaymentDetail Updater'
+          'PaymentDetail Register'
         );
       },
       (err) => {
