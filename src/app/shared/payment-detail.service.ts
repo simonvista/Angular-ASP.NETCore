@@ -1,9 +1,11 @@
+import { PaymentDetail } from './payment-detail.model';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PaymentDetailService {
-
-  constructor() { }
+  constructor() {}
+  // readonly baseURL = 'http://localhost:44302/api/PaymentDetail';
+  formData: PaymentDetail = new PaymentDetail();
 }

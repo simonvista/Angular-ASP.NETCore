@@ -1,16 +1,13 @@
+import { PaymentDetailService } from './../../shared/payment-detail.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-payment-detail-form',
   templateUrl: './payment-detail-form.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class PaymentDetailFormComponent implements OnInit {
+  constructor(public svc: PaymentDetailService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
