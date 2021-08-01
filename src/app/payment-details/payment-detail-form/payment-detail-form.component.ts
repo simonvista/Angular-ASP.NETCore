@@ -1,5 +1,6 @@
-import { PaymentDetailService } from './../../shared/payment-detail.service';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
 
 @Component({
   selector: 'app-payment-detail-form',
@@ -10,4 +11,14 @@ export class PaymentDetailFormComponent implements OnInit {
   constructor(public svc: PaymentDetailService) {}
 
   ngOnInit(): void {}
+  onSubmit(form: NgForm) {
+    this.svc.postPaymentDetail().subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 }
