@@ -14,6 +14,9 @@ export class PaymentDetailsComponent implements OnInit {
     this.svc.refreshList();
   }
   populatedForm(item: PaymentDetail) {
-    this.svc.formData = item;
+    // Object.assign({},item) -> copy & return the value of item
+    // In order to make formData not bind to item
+    this.svc.formData = Object.assign({}, item);
+    console.warn('formData: ', this.svc.formData);
   }
 }

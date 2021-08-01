@@ -18,9 +18,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of svc.list">
-          <td>{{ item.cardOwnerName }}</td>
-          <td>{{ item.cardNumber }}</td>
-          <td>{{ item.cardExpirationDate }}</td>
+          <td (click)="populatedForm(item)">{{ item.cardOwnerName }}</td>
+          <td (click)="populatedForm(item)">{{ item.cardNumber }}</td>
+          <td (click)="populatedForm(item)">{{ item.cardExpirationDate }}</td>
           <td>
             <i class="far fa-trash-alt fa-lg text-danger"></i>
           </td>

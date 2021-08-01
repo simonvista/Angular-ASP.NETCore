@@ -24,4 +24,10 @@ export class PaymentDetailService {
         this.list = res as PaymentDetail[];
       });
   }
+  updatePaymentDetail() {
+    return this.hc.put(
+      `${this.baseURL}/${this.formData.paymentDetailId}`,
+      this.formData
+    );
+  }
 }
