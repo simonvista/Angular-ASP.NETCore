@@ -1,4 +1,4 @@
-<form action="">
+<form novalidate #form="ngForm">
   <input
     type="hidden"
     name="paymentDetailId"
@@ -13,6 +13,8 @@
       name="cardOwnerName"
       #cardOwnerName="ngModel"
       [(ngModel)]="svc.formData.cardOwnerName"
+      required
+      [class.invalid]="cardOwnerName.touched && cardOwnerName.invalid"
     />
   </div>
   <div class="form-group">
@@ -24,6 +26,10 @@
       name="cardNumber"
       #cardNumber="ngModel"
       [(ngModel)]="svc.formData.cardNumber"
+      required
+      maxlength="16"
+      minlength="16"
+      [class.invalid]="cardNumber.touched && cardNumber.invalid"
     />
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -35,6 +41,12 @@
           name="cardExpirationDate"
           #cardExpirationDate="ngModel"
           [(ngModel)]="svc.formData.cardExpirationDate"
+          required
+          maxlength="5"
+          minlength="5"
+          [class.invalid]="
+            cardExpirationDate.touched && cardExpirationDate.invalid
+          "
         />
       </div>
       <div class="form-group col-md-6">
@@ -46,8 +58,21 @@
           name="cardSecurityCode"
           #cardSecurityCode="ngModel"
           [(ngModel)]="svc.formData.cardSecurityCode"
+          required
+          maxlength="3"
+          minlength="3"
+          [class.invalid]="cardSecurityCode.touched && cardSecurityCode.invalid"
         />
       </div>
     </div>
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      class="btn btn-info btn-lg btn-block"
+      [disabled]="form.invalid"
+    >
+      submit
+    </button>
   </div>
 </form>
