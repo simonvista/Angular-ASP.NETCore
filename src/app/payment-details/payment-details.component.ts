@@ -1,3 +1,4 @@
+import { PaymentDetail } from './../shared/payment-detail.model';
 import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,5 +12,8 @@ export class PaymentDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.svc.refreshList();
+  }
+  populatedForm(item: PaymentDetail) {
+    this.svc.formData = item;
   }
 }
